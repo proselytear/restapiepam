@@ -14,7 +14,7 @@
 
 <ul>
     <li><a href="?lang=en"><fmt:message key="label.lang.en" /></a></li>
-    <li><a href="?lang=de"><fmt:message key="label.lang.de" /></a></li>
+    <li><a href="?lang=gr"><fmt:message key="label.lang.de" /></a></li>
 </ul>
 
 <h1>
