@@ -104,7 +104,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.showCars.Main</mainClass>
+                            <mainClass>ua.epam.restapidemo.WebApplication</mainClass>
                             <name>webapp</name>
                         </program>
                     </programs>
