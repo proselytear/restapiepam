@@ -22,7 +22,7 @@ public class ConnectionUtil {
             Class.forName(JDBC_DRIVER);
             return DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
-         throw new RuntimeException("Unable to create connection");
+         throw new RuntimeException("Unable to create connection for data: " + DATABASE_URL + ", " + USER + ", " + PASSWORD);
         }
     }
 
