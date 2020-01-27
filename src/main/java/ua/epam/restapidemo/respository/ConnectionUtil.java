@@ -10,7 +10,14 @@ import java.util.Properties;
 
 public class ConnectionUtil {
 
+    public static Connection connection = null;
+
     public static Connection getConnection() {
+
+        if(connection != null){
+            return connection;
+        }
+
         Properties prop = readPropertiesFile("src/main/resources/application.properties");
         final String JDBC_DRIVER = prop.getProperty("database.driver");
         final String DATABASE_URL = prop.getProperty("database.url");
@@ -20,7 +27,8 @@ public class ConnectionUtil {
 
         try {
             Class.forName(JDBC_DRIVER);
-            return DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+            return connection;
         } catch (ClassNotFoundException | SQLException e) {
          throw new RuntimeException("Unable to create connection for data: " + DATABASE_URL + ", " + USER + ", " + PASSWORD);
         }
